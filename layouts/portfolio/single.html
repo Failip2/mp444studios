@@ -1,0 +1,58 @@
+{{ define "main" }}
+<article class="portfolio-page">
+
+  <section class="gallery-masonry">
+    {{ range .Resources.ByType "image" }}
+      {{/* flags without reassigning variables */}}
+      {{ $isPortrait := gt .Height .Width }}
+      {{ $isWide     := ge (div (float .Width) (float .Height)) 1.8 }}
+
+      <figure class="gallery-item {{ if $isPortrait }}portrait{{ else }}landscape{{ end }}{{ if $isWide }} wide{{ end }}">
+        <img src="{{ .RelPermalink }}" alt="{{ or .Title .Name }}" loading="lazy" decoding="async">
+      </figure>
+    {{ end }}
+  </section>
+
+  <!-- lightbox -->
+  <div id="lightbox" class="lb-backdrop" aria-modal="true" role="dialog">
+    <img class="lb-img" alt="">
+    <button class="lb-close" aria-label="Close">&times;</button>
+  </div>
+
+  <script>
+  (function () {
+    const lb = document.getElementById('lightbox');
+    if (!lb) return;
+    const imgEl = lb.querySelector('.lb-img');
+    const closeBtn = lb.querySelector('.lb-close');
+
+    function open(src, alt) {
+      imgEl.src = src;
+      imgEl.alt = alt || '';
+      lb.classList.add('open');
+      document.body.classList.add('lb-lock');
+    }
+    function close() {
+      lb.classList.remove('open');
+      document.body.classList.remove('lb-lock');
+      imgEl.src = '';
+      imgEl.alt = '';
+    }
+
+    document.addEventListener('click', function (e) {
+      const t = e.target;
+      if (t.matches('.gallery-masonry img')) {
+        const full = t.dataset.full || t.currentSrc || t.src;
+        open(full, t.alt);
+      } else if (t === lb || t === closeBtn) {
+        close();
+      }
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') close();
+    });
+  })();
+  </script>
+
+</article>
+{{ end }}

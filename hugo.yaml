@@ -1,0 +1,73 @@
+baseURL: https://filip.raeburn.dk/
+languageCode: en-us
+title: mp444 studios
+theme: ["hugo-embed-pdf-shortcode", "PaperMod"]
+enableInlineShortcodes: true
+
+# Required to get well formatted code blocks
+pygmentsUseClasses: true
+pygmentsCodeFences: true
+disablePathToLower: true
+enableGitInfo: true
+
+# Required if you want to render robots.txt template
+enableRobotsTXT: true
+
+markup:
+  goldmark:
+    # Needed for mermaid shortcode or when nesting shortcodes (e.g. img within
+    # columns or tabs)
+    renderer:
+      unsafe: true
+  tableOfContents:
+    startLevel: 1
+    endLevel: 9
+
+taxonomies:
+  tag: tags
+
+
+
+params:
+  profileMode:
+    enabled: true
+    title: "Filip Raeburn" # optional default will be site title
+    subtitle: "Fotograf & Videoproducent"
+    imageUrl: "https://drive.google.com/thumbnail?id=18k9YmPEZQNUGJMTjUcp24wamHn2hws-n&sz=w800" # optional
+    imageTitle: "Foto af Filip Raeburn" # optional
+    imageWidth: 300 # custom size
+    imageHeight: 300 # custom size
+    buttons:
+      - name: "Camera Equipment"
+        url: "/equipment"
+      - name: Katalog
+        url: "/catalog/landing"
+      - name: CV
+        url: "/cv"
+
+  socialIcons: # optional
+    - name: "linkedin"
+      url: "https://www.linkedin.com/in/filip-raeburn-61211433b/"
+    - name: "email"
+      url: "mailto:filip.raeburn@gmail.com"
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # necessary for search
+
+
+menu:
+  main:
+    - identifier: home
+      name: tilbage ←
+      url: /
+      weight: 10
+#    - identifier: tags
+#      name: tags
+#      url: /tags/
+#      weight: 20
+#    - identifier: example
+#      name: example.org
+#      url: https://example.org
+#      weight: 30

@@ -1,0 +1,97 @@
+body.homepage .main,
+body.homepage .post-single,
+body.homepage  .post-content,
+body.homepage .main > .container {
+  max-width: none !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+
+/* grid takes full screen height */
+ .landing-grid {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr); /* 3 equal rows on mobile */
+}
+
+@media (min-width: 900px) {
+  body.list .landing-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns on desktop */
+    grid-template-rows: 1fr;
+  }
+}
+
+body.homepage .tile {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  border-radius: 0;  /* flush edges to fill screen */
+  overflow: hidden;
+  background: var(--theme);
+  isolation: isolate;
+}
+
+body.homepage .tile:focus-visible {
+  box-shadow: 0 0 0 3px var(--primary);
+}
+
+body.homepage .tile-figure {
+  margin: 0;
+  position: relative;
+  width: 100%;
+  height: 100%; /* fills grid cell */
+}
+
+body.homepage .tile-figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: saturate(0.95) contrast(1.05);
+}
+
+body.list .tile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.55),
+    rgba(0, 0, 0, 0.2) 40%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+body.list .tile-caption {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 1;
+  display: grid;
+  gap: 0.25rem;
+}
+
+body.list .tile-title {
+  font-weight: 700;
+  font-size: clamp(1.5rem, 2vw + 0.5rem, 2.5rem);
+  color: white !important; /* fallback to white */
+}
+
+body.list .tile-sub {
+  font-size: 1rem;
+  color: lightgray !important; /* fallback to lightgray */
+}
+
+@media (hover:hover) and (pointer:fine) {
+  body.list  .tile:hover .tile-figure img {
+    transform: scale(1.06);
+    filter: saturate(1.05) contrast(1.1);
+  }
+}

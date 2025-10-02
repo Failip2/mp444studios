@@ -1,0 +1,32 @@
+{{/* full-bleed, responsive row container */}}
+<style>
+/* centre everything inside every column */
+.hugocol{
+  text-align:center;
+}
+
+/* 2-up on tablets / small laptops */
+@media(max-width:1023px){
+  .hugocol{
+    flex:1 1 50% !important;
+    max-width:50% !important;
+  }
+}
+/* 1-up on phones */
+@media(max-width:639px){
+  .hugocol{
+    flex:1 1 100% !important;
+    max-width:100% !important;
+  }
+}
+</style>
+
+<div
+  class="hugorow"
+  style="
+    display:flex;flex-wrap:wrap;
+    width:100vw;
+    margin-left:calc(50% - 50vw);
+    margin-right:calc(50% - 50vw);
+    padding:0 1rem;
+">

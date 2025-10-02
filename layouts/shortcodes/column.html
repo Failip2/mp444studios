@@ -1,0 +1,26 @@
+{{/*  If the author passes a width (e.g. "6"), honour it.
+      Otherwise let Flexbox divide the space equally            */}}
+
+{{ if gt (len .Params) 0 }}
+  {{- $fraction := (.Get 0 | int) -}}
+  {{- $percent  := div (mul $fraction 100) 12 -}}
+
+  <div class="hugocol"
+       style="flex:1 1 {{ $percent }}%;
+              max-width:{{ $percent }}%;
+              padding:0.5rem;
+              box-sizing:border-box;">
+    {{ .Inner | markdownify }}
+  </div>
+
+{{ else }}
+
+  <div class="hugocol"
+       style="flex:1 1 0;
+              max-width:100%;
+              padding:0.5rem;
+              box-sizing:border-box;">
+    {{ .Inner | markdownify }}
+  </div>
+
+{{ end }}
