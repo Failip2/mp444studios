@@ -3,7 +3,7 @@ draft: false
 title: 'Camera Equipment'
 ---
 
-![Katalog billede](https://drive.google.com/thumbnail?id=1O8UBTthAryn9pVuOikMt42Znnzh2Fnuk&sz=w1600 "Katalog billede")
+![Katalog billede](/images/equipment/main.webp "Katalog billede")
 
 ## Body & Lenses
 ### Main Body
@@ -36,9 +36,9 @@ w/
 
 ## Video Rig
 
-![Katalog billede](https://drive.google.com/thumbnail?id=1QQykcxz7Z9lluDtJoMu7ww_lgphM7uTb&sz=w1600 "Katalog billede")
+![Katalog billede](/images/equipment/videorig.webp "Katalog billede")
 
-![Katalog billede](https://drive.google.com/thumbnail?id=1esV5edGP9784ZDg2c4YKmabvLgrkvx4G&sz=w1600 "Katalog billede")
+![Katalog billede](/images/equipment/videoeqp.webp "Katalog billede")
 
 ### Cage, mounting & handles
 
@@ -80,7 +80,7 @@ w/
 
 ## Lights
 
-![Katalog billede](https://drive.google.com/thumbnail?id=1NA0huJVMpwmMgbV3xSeLZJ6Fvs0EOvyT&sz=w1600 "Katalog billede")
+![Katalog billede](/images/equipment/lights.webp "Katalog billede")
 
 [CULight FR 60C 2.4 GHz Flash w/ softbox](https://www.galaxiastore.it/borse-treppiedi-flash/2043-cullmann-culight-fr-60c-flash-e-ttl-ii-con-controllo-remoto-integrato-ng-60-canon-61310.html)
 
@@ -96,7 +96,7 @@ w/
 
 ## Tripods & Mounting
 
-![Katalog billede](https://drive.google.com/thumbnail?id=1bj2AmXnSxXf_s-gQGWtlr2cCt5W1DK4-&sz=w1600 "Katalog billede")
+![Katalog billede](/images/equipment/tripods.webp "Katalog billede")
 
 [Velbon EX-530 Tripod](https://www.proshop.dk/Stativ/Velbon-EX-Series-EX-530/2479968?utm_source=prisjagt&utm_medium=cpc&utm_campaign=pricesite)
 
@@ -108,7 +108,7 @@ w/
 
 ## Audio
 
-![Katalog billede](https://drive.google.com/thumbnail?id=1ZwC6jzWeFapn18VTe1c2i3G3U2Y0xxKI&sz=w1600 "Katalog billede")
+![Katalog billede](/images/equipment/audio.webp "Katalog billede")
 
 [Røde Wireless Me Microphone w/ Transmitter & Receiver](https://rode.com/en/microphones/wireless/wireless-me)
 

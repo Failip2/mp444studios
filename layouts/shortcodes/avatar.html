@@ -1,0 +1,4 @@
+{{- $src := .Get "src" -}}
+{{- $size := default "160" (.Get "size") -}}
+<img src="{{$src}}" alt="{{.Get "alt"}}"
+     style="width:{{$size}}px;height:{{$size}}px;object-fit:cover;border-radius:50%;display:block;">
