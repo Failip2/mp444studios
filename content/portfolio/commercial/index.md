@@ -1,6 +1,6 @@
 ---
-title: "Commercial"
-subtitle: "Stories & moments"
+title: "Kommercielt"
+subtitle: "Historier & øjeblikke"
 weight: 5
 # aliases: ["/first"]
 tags: []

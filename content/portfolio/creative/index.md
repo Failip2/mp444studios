@@ -1,6 +1,6 @@
 ---
-title: "Creative"
-subtitle: "Personal projects & artistic work"
+title: "Kreativt"
+subtitle: "Personlige projekter & kunstnerisk arbejde"
 weight: 10
 # aliases: ["/first"]
 tags: []

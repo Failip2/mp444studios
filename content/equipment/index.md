@@ -1,6 +1,6 @@
 ---
 draft: false
-title: 'Camera Equipment'
+title: 'Kamera Udstyr'
 ---
 
 ![Katalog billede](/images/equipment/main.webp "Katalog billede")

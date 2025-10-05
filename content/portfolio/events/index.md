@@ -1,6 +1,6 @@
 ---
 title: "Events"
-subtitle: "Gatherings & stories"
+subtitle: "Sammenkomster & fortællinger"
 weight: 8
 # aliases: ["/first"]
 tags: []
