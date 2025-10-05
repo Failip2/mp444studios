@@ -1,6 +1,6 @@
 baseURL: https://filip.raeburn.dk/
 languageCode: en-us
-title: mp444 studios
+title: mp444studios
 theme: ["hugo-embed-pdf-shortcode", "PaperMod"]
 enableInlineShortcodes: true
 
