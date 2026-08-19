@@ -68,7 +68,7 @@ other than `/srv/mp444studios`, change the `root` line to match.
 
 ```bash
 sudo apt install -y certbot python3-certbot-nginx
-sudo certbot --nginx -d mp444studios.dk -d www.mp444studios.dk
+sudo certbot --nginx -d mp444studios.com -d www.mp444studios.com
 ```
 
 Certbot rewrites the TLS blocks in place and installs a renewal timer. The
@@ -97,7 +97,7 @@ sudo adduser --system --group --home /srv/mp444studios mp444
 sudo -u mp444 git clone https://github.com/Failip2/mp444studios.git /srv/mp444studios
 cd /srv/mp444studios
 sudo -u mp444 npm ci
-sudo -u mp444 NEXT_PUBLIC_SITE_URL=https://mp444studios.dk npm run build
+sudo -u mp444 NEXT_PUBLIC_SITE_URL=https://mp444studios.com npm run build
 ```
 
 `output: "standalone"` puts a self-contained server in `.next/standalone`, but

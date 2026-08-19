@@ -38,3 +38,10 @@ yarn-error.log*
 .idea/
 /.verify
 /.claude/
+
+# Video masters. GitHub rejects any file over 100 MB, and a wedding film is
+# comfortably past that — the mp4 is deployed to the server separately, not
+# committed. See public/video/README.md.
+/public/video/*.mp4
+/public/video/*.mov
+/public/video/*.webm

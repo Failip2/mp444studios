@@ -8,7 +8,7 @@ export const site = {
   description:
     "mp444studios er fotograf og videograf Filip Raeburn fra Aarhus. Foto og video til små og mellemstore begivenheder, kommercielle opgaver og kreative projekter.",
   /** Override at build time with NEXT_PUBLIC_SITE_URL when the domain changes. */
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://mp444studios.dk",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://mp444studios.com",
   locale: "da_DK",
   email: "filip.raeburn@gmail.com",
   /** Displayed as written; the tel: link is derived by stripping spaces. */

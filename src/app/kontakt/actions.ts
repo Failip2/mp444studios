@@ -49,11 +49,23 @@ function rateLimited(key: string): boolean {
   return entry.count > RATE_LIMIT.max;
 }
 
+/**
+ * Best available identifier for the caller, most trustworthy first.
+ *
+ * X-Forwarded-For is last for a reason. Cloudflare *appends* to it rather than
+ * replacing it, so a client that sends its own X-Forwarded-For ends up as the
+ * left-most entry — letting anyone behind the proxy forge a fresh identity per
+ * request and walk straight past the rate limit. CF-Connecting-IP is written by
+ * Cloudflare and cannot be spoofed that way; X-Real-IP comes from our own nginx.
+ */
 async function clientKey(): Promise<string> {
   const h = await headers();
-  // nginx sets X-Forwarded-For; the left-most entry is the original client.
-  const forwarded = h.get("x-forwarded-for");
-  return (forwarded?.split(",")[0] ?? h.get("x-real-ip") ?? "unknown").trim();
+  const candidate =
+    h.get("cf-connecting-ip") ??
+    h.get("x-real-ip") ??
+    h.get("x-forwarded-for")?.split(",")[0] ??
+    "unknown";
+  return candidate.trim();
 }
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
