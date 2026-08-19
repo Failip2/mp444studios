@@ -1,19 +1,40 @@
-# Created by https://www.toptal.com/developers/gitignore/api/hugo
-# Edit at https://www.toptal.com/developers/gitignore?templates=hugo
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
 
-### Hugo ###
-# Generated files by hugo
-/public/
-/resources/_gen/
-/assets/jsconfig.json
-hugo_stats.json
+# next.js
+/.next/
+/out/
+next-env.d.ts
 
-# Executable may be added to repository
-hugo.exe
-hugo.darwin
-hugo.linux
+# production
+/build
 
-# Temporary lock file while building
-/.hugo_build.lock
+# generated image derivatives are committed; caches are not
+/.cache/
 
-# End of https://www.toptal.com/developers/gitignore/api/hugo
+# misc
+.DS_Store
+*.pem
+Thumbs.db
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files
+.env
+.env*.local
+
+# typescript
+*.tsbuildinfo
+
+# editor
+.vscode/
+.idea/
+/.verify
+/.claude/

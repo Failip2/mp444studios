@@ -1,0 +1,41 @@
+{
+  "name": "mp444studios",
+  "version": "2.0.0",
+  "private": true,
+  "description": "mp444studios — foto & videoproduktion. Next.js site for VPS deployment.",
+  "engines": {
+    "node": ">=20.9"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "media": "node scripts/build-media.mjs",
+    "media:force": "node scripts/build-media.mjs --force"
+  },
+  "dependencies": {
+    "@react-three/fiber": "^9.7.0",
+    "next": "^16.3.1",
+    "nodemailer": "^9.0.5",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "server-only": "^0.0.1",
+    "three": "^0.185.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.13",
+    "@types/node": "^22.15.3",
+    "@types/nodemailer": "^8.0.1",
+    "@types/react": "^19.1.9",
+    "@types/react-dom": "^19.1.7",
+    "@types/three": "^0.185.4",
+    "sharp": "^0.34.3",
+    "tailwindcss": "^4.1.13",
+    "typescript": "^5.8.3"
+  },
+  "allowScripts": {
+    "sharp@0.34.5": true
+  }
+}

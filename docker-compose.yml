@@ -1,0 +1,35 @@
+services:
+  web:
+    build:
+      context: .
+      args:
+        # Used for canonical URLs, Open Graph tags and sitemap.xml.
+        NEXT_PUBLIC_SITE_URL: ${NEXT_PUBLIC_SITE_URL:-https://mp444studios.dk}
+    image: mp444studios:latest
+    container_name: mp444studios
+    restart: unless-stopped
+    # Bound to loopback: nginx on the host is the only thing that should be able
+    # to reach it. Drop the 127.0.0.1 prefix only if nothing else fronts it.
+    ports:
+      - "127.0.0.1:3000:3000"
+    environment:
+      NODE_ENV: production
+      NEXT_TELEMETRY_DISABLED: "1"
+      # Contact form SMTP. Read from .env beside this file; the form degrades to
+      # showing the address and phone number directly when they are absent.
+      SMTP_HOST: ${SMTP_HOST:-}
+      SMTP_PORT: ${SMTP_PORT:-587}
+      SMTP_USER: ${SMTP_USER:-}
+      SMTP_PASS: ${SMTP_PASS:-}
+      CONTACT_TO: ${CONTACT_TO:-}
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://127.0.0.1:3000/"]
+      interval: 30s
+      timeout: 4s
+      retries: 3
+      start_period: 10s
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

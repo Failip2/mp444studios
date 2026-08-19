@@ -1,3 +1,0 @@
----
-bodyClasses: portfolio-chooser
----

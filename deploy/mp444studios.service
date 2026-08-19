@@ -1,0 +1,53 @@
+# Non-Docker deployment. Use this OR docker-compose, not both.
+#
+#   sudo cp deploy/mp444studios.service /etc/systemd/system/
+#   sudo systemctl daemon-reload
+#   sudo systemctl enable --now mp444studios
+#
+# Expects the built standalone output laid out under /srv/mp444studios as
+# described in docs/DEPLOY.md.
+
+[Unit]
+Description=mp444studios (Next.js)
+Documentation=https://github.com/Failip2/mp444studios
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=mp444
+Group=mp444
+WorkingDirectory=/srv/mp444studios
+Environment=NODE_ENV=production
+Environment=NEXT_TELEMETRY_DISABLED=1
+Environment=PORT=3000
+Environment=HOSTNAME=127.0.0.1
+# Contact form SMTP credentials. Keep them out of this unit file — it is
+# world-readable — and put them in an owner-only env file instead:
+#   sudo install -o mp444 -g mp444 -m 600 /dev/null /etc/mp444studios.env
+EnvironmentFile=-/etc/mp444studios.env
+ExecStart=/usr/bin/node server.js
+Restart=always
+RestartSec=5
+
+# The process only ever reads its own directory and answers HTTP.
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictAddressFamilies=AF_INET AF_INET6
+RestrictNamespaces=true
+LockPersonality=true
+MemoryDenyWriteExecute=false
+ReadWritePaths=/srv/mp444studios/.next/cache
+
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=mp444studios
+
+[Install]
+WantedBy=multi-user.target

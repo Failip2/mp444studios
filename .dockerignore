@@ -1,0 +1,22 @@
+# The 660 MB of camera originals are only needed by `npm run media`, which runs
+# on a workstation. Their derivatives in public/media are what ships.
+source/
+
+.git
+.github
+.next
+node_modules
+.cache
+npm-debug.log*
+.env
+.env*.local
+.DS_Store
+Thumbs.db
+.vscode
+.idea
+.claude
+docs
+deploy
+README.md
+AGENTS.md
+CLAUDE.md
